@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Cadastra Usuario</title>
+</head>
+<body>
+    <h1>Cadastra Usuario</h1>
+
+    <form method="post" action="/usuario" id="formulario">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Digite o nome">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" placeholder="Digite o cpf">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select class="form-control form-control-sm">
+            <option>CLIENT</option>
+            <option>ADMIN</option>
+          </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" placeholder="Digite o cpf">
+        </div>
+        <br>
+        <div id="telefones">
+            <div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" placeholder="Digite o telefone">
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label" for="checkbox">Principal</label>
+                    <input type="checkbox" class="form-check-input" id="checkbox">
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+    </form>
+    <button id="botaoNovoItem" class="btn btn-primary" onclick="adicionarTelefone()">Adicionar Telefone</button>
+    <br><br>
+    <button form="formulario" class="btn btn-primary">Enviar</button>
+
+    <script src="javascript.js">
+        console.log('carregou')
+        let itemCorrente = 0
+        function adicionarTelefone(e){
+            console.log('entoru aqui')
+            let labelTelefone = document.createElement('label')
+            labelTelefone.for = "telefone"
+            let inputTelefone = document.createElement('input')
+            with(inputTelefone){
+                classList.add("form-control")
+                type = "text"
+                placeholder = "Digite o telefone"
+            }
+            // inputTelefone.type = "text"
+            // inputTelefone.class = "form-control"
+            // inputTelefone.placeholder = "Digite o telefone"
+
+            // let divTelefone = document.createElement('div')
+            // divTelefone.class = "form-group"
+            // divTelefone.appendChild(labelTelefone)
+            // divTelefone.appendChild(inputTelefone)
+
+            // let labelCheckbox = document.createElement('label')
+            // labelCheckbox.class = "form-check-label"
+            // labelCheckbox.for = "checkbox"
+        
+            // let inputCheckbox = document.createElement('input')
+            // inputCheckbox.type = "checkbox"
+            // inputCheckbox.class = "form-check-input"
+
+            // let divCheckbox = document.createElement('div')
+
+            document.querySelector('#formulario').appendChild(inputTelefone);
+            //document.querySelector('#formulario').appendChild(labelCheckbox);
+
+        }
+
+//         let currentItem = 3;
+// function adicionarItem(e) {
+//     e.preventDefault(); // evitar que o form seja submetido
+
+//     // criar o input
+//     let input = document.createElement('input');
+//     with (input) {
+//         classList.add('titulo');
+//         placeholder = 'Digite o Título da lista';
+//         maxLength = 19;
+//     }
+//     // criar o textarea
+//     let textarea = document.createElement('textarea');
+//     with (textarea) {
+//         classList.add('descricao');
+//         cols = 5;
+//         rows = 5;
+//         maxLength = 130;
+//     }
+
+//     // adiciona ambos em um div
+//     let div = document.createElement('div');
+//     div.id = 'retangulo' + currentItem; // usa o contador como parte do id
+//     div.appendChild(input);
+//     div.appendChild(textarea);
+
+//     // atualiza o contador (assim o próximo div não terá id repetido)
+//     currentItem++;
+
+//     // adiciona a div no form
+//     document.querySelector('#formulario').appendChild(div);
+// }
+
+// // ao clicar no botão, adiciona um novo item
+// document.querySelector('#botaoNovoItem').addEventListener('click', adicionarItem);
+
+    </script>
+    <!-- <th scope="col">ID</th>
+            <th scope="col">NOME</th>
+            <th scope="col">TIPO</th>
+            <th scope="col">TELEFONE</th>
+            <th scope="col">EMAIL</th> -->
+</body>
+</html>
